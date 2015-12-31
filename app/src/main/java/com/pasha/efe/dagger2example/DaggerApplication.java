@@ -2,9 +2,9 @@ package com.pasha.efe.dagger2example;
 
 import android.app.Application;
 
-import com.pasha.efe.dagger2example.components.NetComponent;
-import com.pasha.efe.dagger2example.modules.AppModule;
-import com.pasha.efe.dagger2example.modules.NetModule;
+import com.pasha.efe.dagger2example.di.components.NetComponent;
+import com.pasha.efe.dagger2example.di.modules.AppModule;
+import com.pasha.efe.dagger2example.di.modules.NetModule;
 
 /**
  * Created by efe on 30/12/15.

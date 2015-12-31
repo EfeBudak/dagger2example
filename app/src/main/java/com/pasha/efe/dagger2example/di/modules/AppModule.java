@@ -1,4 +1,4 @@
-package com.pasha.efe.dagger2example.modules;
+package com.pasha.efe.dagger2example.di.modules;
 
 import android.app.Application;
 

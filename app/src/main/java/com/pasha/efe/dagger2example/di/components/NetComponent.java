@@ -1,8 +1,8 @@
-package com.pasha.efe.dagger2example.components;
+package com.pasha.efe.dagger2example.di.components;
 
 import com.pasha.efe.dagger2example.MainActivity;
-import com.pasha.efe.dagger2example.modules.AppModule;
-import com.pasha.efe.dagger2example.modules.NetModule;
+import com.pasha.efe.dagger2example.di.modules.AppModule;
+import com.pasha.efe.dagger2example.di.modules.NetModule;
 
 import javax.inject.Singleton;
 
