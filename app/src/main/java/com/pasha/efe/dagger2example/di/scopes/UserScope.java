@@ -1,8 +1,12 @@
 package com.pasha.efe.dagger2example.di.scopes;
 
+import javax.inject.Scope;
+
 /**
  * Created by efe on 31/12/15.
  */
-public class UserScope {
+
+@Scope
+public @interface UserScope {
 
 }
