@@ -10,4 +10,5 @@ import javax.inject.Scope;
 public @interface UserScope {
 
     //TODO nothing
+
 }
