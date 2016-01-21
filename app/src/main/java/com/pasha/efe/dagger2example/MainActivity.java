@@ -1,20 +1,19 @@
 package com.pasha.efe.dagger2example;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
-import com.squareup.okhttp.OkHttpClient;
+import com.pasha.efe.dagger2example.pojos.Repo;
 
-import javax.inject.Inject;
+public class MainActivity extends AppCompatActivity implements
+        View.OnClickListener,
+        MainView {
 
-public class MainActivity extends AppCompatActivity {
+    private Button buttonGetRepo;
 
-    @Inject
-    SharedPreferences sharedPreferences;
-    @Inject
-    OkHttpClient okHttpClient;
-
+    private MainPresenter mainPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +21,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ((DaggerApplication) getApplication()).getNetComponent().inject(this);
+
+        buttonGetRepo = (Button) findViewById(R.id.button_get_repo);
+        buttonGetRepo.setOnClickListener(this);
+
+        mainPresenter = new MainPresenterImpl(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    @Override
+    public void onSuccess(Repo repo) {
+
+    }
+
+    @Override
+    public void onFailure() {
+
     }
 }
