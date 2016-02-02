@@ -5,15 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.pasha.efe.dagger2example.pojos.Repo;
+import com.pasha.efe.dagger2example.services.GitHubService;
+
+import javax.inject.Inject;
+
+import retrofit.Retrofit;
 
 public class MainActivity extends AppCompatActivity implements
-        View.OnClickListener,
-        MainView {
+        View.OnClickListener {
 
     private Button buttonGetRepo;
 
-    private MainPresenter mainPresenter;
+    @Inject Retrofit retrofit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,22 +28,12 @@ public class MainActivity extends AppCompatActivity implements
         buttonGetRepo = (Button) findViewById(R.id.button_get_repo);
         buttonGetRepo.setOnClickListener(this);
 
-        mainPresenter = new MainPresenterImpl(this);
+        GitHubService gitHubService = retrofit.create(GitHubService.class);
 
     }
 
     @Override
     public void onClick(View v) {
-
-    }
-
-    @Override
-    public void onSuccess(Repo repo) {
-
-    }
-
-    @Override
-    public void onFailure() {
 
     }
 }

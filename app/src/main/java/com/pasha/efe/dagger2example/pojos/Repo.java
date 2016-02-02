@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by efe on 20/01/16.
+ * Created by efe on 02/02/16.
  */
 public class Repo implements Parcelable {
 
@@ -29,6 +29,12 @@ public class Repo implements Parcelable {
     public Repo() {
     }
 
+    protected Repo(Parcel in) {
+        this.id = in.readInt();
+        this.name = in.readString();
+        this.fullName = in.readString();
+    }
+
     public int getId() {
         return id;
     }
@@ -39,12 +45,6 @@ public class Repo implements Parcelable {
 
     public String getFullName() {
         return fullName;
-    }
-
-    protected Repo(Parcel in) {
-        this.id = in.readInt();
-        this.name = in.readString();
-        this.fullName = in.readString();
     }
 
     @Override
