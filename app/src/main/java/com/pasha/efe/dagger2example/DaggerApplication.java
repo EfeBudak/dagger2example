@@ -17,7 +17,7 @@ public class DaggerApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        netComponent = com.pasha.efe.dagger2example.components.DaggerNetComponent.builder()
+        netComponent = com.pasha.efe.dagger2example.di.components.DaggerNetComponent.builder()
                 // list of modules that are part of this component need to be created here too
                 .appModule(new AppModule(this))
                 .netModule(new NetModule("https://api.github.com"))
